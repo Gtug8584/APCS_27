@@ -13,8 +13,53 @@ class starter {
 	static ArrayList<String> arr = new ArrayList<String>();
 
 	public static void main(String args[]) throws InterruptedException {
-		// Write your code here!
+		System.out.print("welcome to typing game, it is currently ");
+		getTime();
+		System.out.println(" and we are ready to play");
+		System.out.println("Give a sentence and type it fast");
+		System.out.println("you can 1.Play random. 2.Play set. 3.Quit.");
+		Scanner sc = new Scanner(System.in);
+		int game = sc.nextInt();
+		populateArrayList();
+		String a =getSentence();
+		if(game == 1){
+			System.out.println("your sentence is: ");
+			System.out.println(a);
+			countdown();
+			startTimer();
+			sc = new Scanner(System.in);
+			String b = sc.nextLine();
 
+			System.out.println("Nice job, here are the results");
+			System.out.print("Time: ");
+			endTimer();
+			System.out.print("Errors: ");
+			compareSentences(a, b);
+			lettersInSentence(a);
+
+
+		}
+		if(game == 2){
+			System.out.println(" Selct the number of the sentence yoiu would like to play:");
+			int selected = sc.nextInt();
+			getSentence(selected);
+			System.out.println("your sentence is: ");
+			System.out.println(a);
+			countdown();
+			startTimer();
+			sc = new Scanner(System.in);
+			String b = sc.nextLine();
+
+			System.out.println("Nice job, here are the results");
+			System.out.print("Time: ");
+			endTimer();
+			System.out.print("Errors: ");
+			compareSentences(a, b);
+			lettersInSentence(a);
+		}
+		if(game==3){
+			System.out.println("");
+		}
 		
 	}
 
@@ -35,6 +80,7 @@ class starter {
 		long endTime = System.nanoTime();
 		long timeSeconds = ((endTime - startTime)/1000000);
 		double decSeconds = timeSeconds/1000.0;
+		System.out.println(timeSeconds+decSeconds);
 		return decSeconds;
 	}
 
@@ -104,6 +150,7 @@ class starter {
 			given = given.substring(1);
 			typed = typed.substring(1);
 		}
+		System.out.println(errors);
 		return errors;
 	}
 

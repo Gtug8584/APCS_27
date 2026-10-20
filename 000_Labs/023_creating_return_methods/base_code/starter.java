@@ -7,9 +7,10 @@ import java.util.Scanner;
 
 class starter {
 	public static int pow(int x,int y){
-		int times = 1;
+		int times = 0;
+		int a =1;
 		while(times!=y){
-			int a =x*x;
+			a *= x;
 			times=times+1;
 		}
 		System.out.println(a);
