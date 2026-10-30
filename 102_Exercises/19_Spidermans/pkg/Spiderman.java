@@ -10,15 +10,56 @@ public class Spiderman {
 
 	// Create constructors for each combination of actor/age/villain. Use the defaults above if not an input parameter.
 	// Default constructor! 				Actor - Unknown, Age - 0, Villain - Unknown
+	public void Spiderman(){
+		actor="unknown";
+		age = 0;
+		villain="unknown";
+	}
 	// String Actor constructor! 			Age - 0, Villain Unknown 
+	public Spiderman(String a){
+		actor = a;
+		age = 0;
+		villain="unknown";
+	}
 	// int Age constructor! 				Actor - Unknown, Villain Unknown
+	public Spiderman(int a){
+		actor="unknown";
+		age=a;
+		villain="unknown";
+	}
 	// String Actor, int Age constructor! 	Villain Unknown
+	public Spiderman(String a,int b){
+		actor=a;
+		age=b;
+		villain="unknown";
+	}
 	// String Actor, int Age, String Villain constructor!		
-	
+	public Spiderman(String a, int b, String c){
+		actor=a;
+		age=b;
+		villain=c;
+	}
 	// ---------------------------------------
 	// Create accessor and mutator methods for actor, age, and villain (6 total methods)
 	// Ex: getAge and setAge
-	
+	public String getName(){
+		return actor;
+	}
+	public int getAge(){
+		return age;
+	}
+	public String getVillain(){
+		return villain;
+	}
+	public void setAge(int a){
+		age=a;
+	}
+	public void setName(String a){
+		actor=a;
+	}
+	public void setVillain(String a){
+		villain=a;
+	}
 
 
 	// ---------------------------------------
