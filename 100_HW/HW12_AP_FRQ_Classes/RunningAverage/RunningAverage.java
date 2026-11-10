@@ -22,6 +22,9 @@ public class RunningAverage{
     */
     public void updateAverage(double newVal){
         /* to be implemented in part (a) */
+        double a=count*average+newVal;
+        a=a/(count+1.0);
+        a.RunningAverage();
     }
 
 
@@ -33,6 +36,29 @@ public class RunningAverage{
     */
     public int processNewRatings(int num){
         /* to be implemented in part (b) */
+        double a=0;
+        
+        int d=0;
+        while(num>0){
+            a=getNewRating();
+           if(a>=0){
+            updateAverage(a);
+            num=num-1;
+           }
+           else{
+            
+            d=d+1;
+            
+           }
+            
+            
+        }
+        return d;
+        
+        if(num<0){
+            return 0;
+        }
+       
     }
 
     /** Returns a single numeric rating. */
